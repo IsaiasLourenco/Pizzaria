@@ -1,0 +1,14 @@
+CREATE TABLE item(
+item_cod INTEGER NOT NULL AUTO_INCREMENT,
+item_ent_cod INTEGER NOT NULL,
+item_fun_cod INTEGER NOT NULL,
+item_cli_cod INTEGER NOT NULL,
+item_ped_cod INTEGER NOT NULL,
+item_car_cod INTEGER NOT NULL,
+item_quantidade INTEGER NOT NULL,
+PRIMARY KEY(item_cod, item_ent_cod, item_cli_cod, item_ped_cod,
+item_car_cod, item_quantidade),
+INDEX ItemPedido(item_ped_cod, item_cli_cod, item_fun_cod, item_ent_cod),
+INDEX ItemCardapio(item_car_cod)
+
+);

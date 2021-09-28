@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RelPedidos" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2505c034-25de-45c8-a462-53fa190f2b0c">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[select pedidos.*, clientes.cli_nome from pedidos, clientes]]>
+	</queryString>
+	<field name="ped_cod" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ped_data" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ped_hora" class="java.sql.Time">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ped_total" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ped_cli_cod" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ped_fun_cod" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ped_ent_cod" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ped_status" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cli_nome" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="191" y="20" width="205" height="37" uuid="73fc63ed-d69f-4f77-ac9c-1966444d063f"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Relatório de Pedidos]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="455" y="0" width="100" height="20" uuid="71d59828-3105-4a90-a1ad-1445d6a2b0d2"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="64" height="20" uuid="24b8791e-435f-4f1d-ae5a-05164064ced0"/>
+				<text><![CDATA[Cód Cliente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="75" y="0" width="142" height="20" uuid="d5499db4-c21b-4f77-9c76-5974cf261d65"/>
+				<text><![CDATA[Nome Cliente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="231" y="0" width="74" height="20" uuid="9e4ba917-4cc1-4ce5-83f4-190e95e1cf7e"/>
+				<text><![CDATA[Data Pedido]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="316" y="0" width="64" height="20" uuid="fa9fbe5e-9b15-4fc8-9aa4-d6e9b62fc73c"/>
+				<text><![CDATA[Hora Pedido]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="488" y="0" width="67" height="20" uuid="c63751f1-bb96-4bcd-a857-1fd8ec00bafc"/>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="388" y="0" width="81" height="20" uuid="58493cba-5312-4fff-a7ae-0a3009cf3462"/>
+				<text><![CDATA[Status Pedido]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="64" height="20" uuid="77fd761e-d5db-48c6-8022-f5de3708d493"/>
+				<textFieldExpression><![CDATA[$F{ped_cli_cod}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="75" y="0" width="142" height="20" uuid="29f5ea4d-7621-467a-a137-efb16c384695"/>
+				<textFieldExpression><![CDATA[$F{cli_nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="231" y="0" width="74" height="20" uuid="66b680ab-cce7-4a6f-80bc-ba029b9644be"/>
+				<textFieldExpression><![CDATA[$F{ped_data}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="316" y="0" width="64" height="20" uuid="e7771318-784e-4b61-b070-113f99ec16cc"/>
+				<textFieldExpression><![CDATA[$F{ped_hora}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="488" y="0" width="67" height="20" uuid="db851fd8-5297-4268-9f30-0e4059e57eb3"/>
+				<textFieldExpression><![CDATA[$F{ped_total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="396" y="0" width="73" height="20" uuid="37ba4a1b-c04b-46ea-95ff-78dee20529ff"/>
+				<textFieldExpression><![CDATA[$F{ped_status}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
